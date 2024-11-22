@@ -67,11 +67,11 @@ const Portfolio = () => {
             {/* HOME */}
             <div id='home' className='min-h-screen flex flex-col justify-center items-center bg-gray-950'>
                 
-                <div className="min-h-screen flex flex-col justify-center items-center bg-gray-950">
+                <div className="min-h-screen flex flex-col  justify-center items-center bg-gray-950">
 
 
-                    {/* Name Letters */}
-                    <div className="flex font-light italic text-7xl mb-10 text-white justify-center">
+                    {/* Name Letters and Reset Button */}
+                    <div className="flex flex-col md:flex-row font-light italic text-5xl md:text-7xl mb-10 text-white justify-center">
                         <motion.div
                         className="flex"
                         initial="hidden"
@@ -129,27 +129,28 @@ const Portfolio = () => {
                             ))}
                         </div>
                         </motion.div>
-                                {/* Reset Button */}
-                                <div className='duration-300 hover:scale-110 text-pink-300 translate-x-10 -translate-y-2 '>
-                                    <motion.button
-                                        className='border-2 border-white  shadow-md shadow-white rounded-xl p-2 '
-                                        initial={{ opacity: 0, x: 100 }} 
-                                        animate={{ opacity: 1, x: 0 }} 
-                                        onClick={handleReset} 
-                                        transition={{ duration: 1, delay: 5, ease: "easeOut" }} 
-                                        title='Drag the letters around and reset them with this button :)'
-                                    >
-                                        
-                                        <MdAutoFixHigh size={30} />
-                                    </motion.button>
-                                </div>
+                        
+                        {/* Reset Button */}
+                        <div className='duration-300 hover:scale-110 text-pink-300 md:translate-x-10 md:-translate-y-2 translate-y-4 flex md:block justify-center'>
+                            <motion.button
+                                className='border-2 border-white shadow-md shadow-white rounded-xl p-2'
+                                initial={{ opacity: 0, x: 100 }} 
+                                animate={{ opacity: 1, x: 0 }} 
+                                onClick={handleReset} 
+                                transition={{ duration: 1, delay: 5, ease: "easeOut" }} 
+                                title='Drag the letters around and reset them with this button :)'
+                            >
+                                
+                                <MdAutoFixHigh size={30} />
+                            </motion.button>
+                        </div>
 
 
                     </div>
 
                     {/* Homepage Copy  */}
                     
-                    <div className='text-white text-md font-extralight italic mb-10'>
+                    <div className='text-white text-md font-extralight italic mb-10 ml-10 md:ml-0 '>
 
                         <motion.h4
                             initial={{ x: '100', opacity: 0 }} 
