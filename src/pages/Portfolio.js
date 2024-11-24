@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaGlobe, FaArrowDown, FaArrowUp } from 'react-icons/fa'
 import { HiOutlineMail } from 'react-icons/hi'
-import { BsFillPersonLinesFill } from 'react-icons/bs'
-import { MdAutoFixHigh } from "react-icons/md";
+import { MdOutlineQuestionMark, MdAutoFixHigh } from "react-icons/md";
+import { TbFileCv } from "react-icons/tb";
+import { Tooltip } from 'react-tooltip';
+import AnimatedBackground from './AnimatedBackground';
+
+
 
 
 
@@ -11,6 +15,7 @@ import { MdAutoFixHigh } from "react-icons/md";
 const Portfolio = () => {
 
     const [reset, setReset] = useState(false);
+
 
     const projects = [
         {
@@ -65,10 +70,41 @@ const Portfolio = () => {
         <div className="min-h-screen ">
 
             {/* HOME */}
-            <div id='home' className='min-h-screen flex flex-col justify-center items-center bg-gray-950'>
-                
-                <div className="min-h-screen flex flex-col  justify-center items-center bg-gray-950">
+            <div id='home' className='min-h-screen flex flex-col justify-center items-center '>
+            <AnimatedBackground />
 
+                <div className="min-h-screen flex flex-col  justify-center items-center ">
+                        
+                        {/* QUESTION MARK */}
+
+                        <div className='duration-300 hover:scale-110 text-pink-300 -translate-y-10'>
+                            <motion.button
+                                className='p-2'
+                                initial={{ opacity: 0, y: -50 }} 
+                                animate={{ opacity: 1, y: 0 }} 
+                                transition={{ duration: 1, delay: 7, ease: "easeOut" }} 
+                                data-tooltip-id="my-tooltip-multiline" 
+                                data-tooltip-offset={20}
+                                data-tooltip-html="Drag the letters around and reset<br /> them with the button by my name :)"
+
+                            >
+                                <MdOutlineQuestionMark size={50} />
+                                <Tooltip 
+                                    id="my-tooltip-multiline" 
+                                    place='right'
+                                    style={{ 
+                                        backgroundColor: "black", 
+                                        color: "white", 
+                                        fontSize: "0.7rem", 
+                                        fontFamily: 'cursive',
+                                        padding: "0.5rem 0.5rem", 
+                                        borderRadius: "0.25rem"
+                                    }} 
+                                />
+
+                            </motion.button>
+
+                        </div>
 
                     {/* Name Letters and Reset Button */}
                     <div className="flex flex-col md:flex-row font-light italic text-5xl md:text-7xl mb-10 text-white justify-center">
@@ -138,12 +174,15 @@ const Portfolio = () => {
                                 animate={{ opacity: 1, x: 0 }} 
                                 onClick={handleReset} 
                                 transition={{ duration: 1, delay: 5, ease: "easeOut" }} 
-                                title='Drag the letters around and reset them with this button :)'
                             >
                                 
                                 <MdAutoFixHigh size={30} />
+
                             </motion.button>
+
                         </div>
+
+
 
 
                     </div>
@@ -183,7 +222,7 @@ const Portfolio = () => {
                             <HiOutlineMail size={30} />
                         </a>
                         <a href='/Farid Khan CV 14th Nov.pdf' target="_blank" rel="noopener noreferrer" className="mx-2 duration-300 hover:scale-125" download>
-                            <BsFillPersonLinesFill size={30} />
+                            <TbFileCv size={30} />
                         </a>
                     </motion.div>
                 </div>
@@ -206,7 +245,7 @@ const Portfolio = () => {
             </div>
 
             {/* PROJECTS */}
-            <div id='projects' className='min-h-screen bg-gray-950 text-white'>
+            <div id='projects' className='min-h-screen bg-gradient-to-b from-black to-gray-950 text-white'>
                 <a href="#home" className='flex justify-center pt-10  '>
                     <FaArrowUp className='duration-300 hover:scale-110 border-2 border-white shadow-md  shadow-white rounded-xl p-2' size={50}/>
                 </a>
