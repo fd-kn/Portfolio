@@ -221,7 +221,7 @@ const Portfolio = () => {
                         <a href="mailto:fdkhan470@gmail.com" className="mx-2 duration-300 hover:scale-125">
                             <HiOutlineMail size={30} />
                         </a>
-                        <a href='/Farid Khan CV 14th Nov.pdf' target="_blank" rel="noopener noreferrer" className="mx-2 duration-300 hover:scale-125" download>
+                        <a href='/Farid Khan CV 26-11-24.pdf' target="_blank" rel="noopener noreferrer" className="mx-2 duration-300 hover:scale-125" download>
                             <TbFileCv size={30} />
                         </a>
                     </motion.div>
